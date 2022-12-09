@@ -29,6 +29,22 @@ class App {
         }
       });
     }
+
+    function checkUserNumber(user) {
+      if (user.length > 3) {
+        return false;
+      }
+      if (new Set(user).size !== 3) {
+        return false;
+      }
+      if (user.includes(0)) {
+        return false;
+      }
+      if (Number.isNaN(Number(user))) {
+        return false;
+      }
+      return true;
+    }
   }
 }
 
