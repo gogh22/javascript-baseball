@@ -20,9 +20,8 @@ class App {
 
     function createInputUserNumber() {
       MissionUtils.Console.readLine('숫자를 입력해주세요 :', (userNum) => {
-        for (let i = 0; i < userNum.length; i++) {
-          userNumber.push(userNum[i]);
-        }
+        checkUserNumber(userNum);
+        userNumber = userNum;
       });
     }
   }
