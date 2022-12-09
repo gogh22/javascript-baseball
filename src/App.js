@@ -18,6 +18,17 @@ class App {
       }
       return createInputUserNumber();
     }
+
+    function createInputUserNumber() {
+      MissionUtils.Console.readLine('숫자를 입력해주세요 :', (userNum) => {
+        if (checkUserNumber(userNum)) {
+          userNumber = userNum;
+          return playGame();
+        } else {
+          throw "다시 입력해주세요.";
+        }
+      });
+    }
   }
 }
 
