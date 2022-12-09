@@ -78,6 +78,19 @@ class App {
       }
       return createInputUserNumber();
     }
+
+    function askRestart() {
+      MissionUtils.Console.readLine('게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.', (num) => {
+        if (num == 1) {
+          return createComputerNumber();
+        } else if (num == 2) {
+          MissionUtils.Console.print("게임 종료");
+          return MissionUtils.Console.close();
+        } else {
+          return askRestart();
+        }
+      });
+    }
   }
 }
 
