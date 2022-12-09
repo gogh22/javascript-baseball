@@ -24,6 +24,21 @@ class App {
         userNumber = userNum;
       });
     }
+
+    function checkUserNumber(user) {
+      if (user.length > 3) {
+        throw "다시 입력해주세요.";
+      }
+      if (new Set(user).size !== 3) {
+        throw "다시 입력해주세요";
+      }
+      if (user.includes(0)) {
+        throw "다시 입력해주세요";
+      }
+      if (Number.isNaN(Number(user))) {
+        throw "다시 입력해주세요";
+      }
+    }
   }
 }
 
