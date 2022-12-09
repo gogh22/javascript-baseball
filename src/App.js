@@ -45,6 +45,22 @@ class App {
       }
       return true;
     }
+
+    function playGame() {
+      strike = 0;
+      ball = 0;
+      nothing = 0;
+      for (let ind = 0; ind < 3; ind++) {
+        if (userNumber[ind] == computer[ind]) {
+          strike += 1;
+        } else if (userNumber.includes(computer[ind])) {
+          ball += 1;
+        } else {
+          nothing += 1;
+        }
+      }
+      return checkScoresResult();
+    }
   }
 }
 
