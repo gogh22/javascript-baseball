@@ -39,6 +39,18 @@ class App {
         throw "다시 입력해주세요";
       }
     }
+
+    function playGame() {
+      for (let ind = 0; ind < computer.length;ind++) {
+        if (userNumber[ind] == computer[ind]) {
+          strike += 1;
+        } else if (computer.includes(userNumber[ind])) {
+          ball += 1;
+        } else {
+          nothing += 1;
+        }
+      }
+    }
   }
 }
 
